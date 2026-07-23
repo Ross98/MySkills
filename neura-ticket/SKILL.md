@@ -24,8 +24,14 @@ When user asks to write / create a ticket for Neura, do:
    - Use the exact field names from the portal.
    - Mark required fields with `*`.
    - Include combobox options when known (e.g. Priority, Request category).
+   - Provide the portal link so the user can submit manually.
 
-5. **Ticket format**:
+5. **DO NOT submit the ticket programmatically** — Codex only generates the ticket
+   content and provides the portal link. The user must manually open the link and
+   submit the ticket themselves through the Jira portal. Never fill out the portal
+   form or click Send on behalf of the user.
+
+6. **Ticket format**:
    ```
    # Ticket: <summary>
 
@@ -54,7 +60,7 @@ When user asks to write / create a ticket for Neura, do:
 
    Service Request and General Inquiry have many fields — present only the populated ones rather than the full table.
 
-6. If user needs the direct Jira portal link, construct:
+7. If user needs the direct Jira portal link, construct:
    - `https://neurarobotics.atlassian.net/servicedesk/customer/portal/10/group/<group-id>/create/<request-type-id>`
    - Group IDs: Robot Arms=52, MAV/MAV+=1108, MiPA=1143, Academy=1107
    - Request type IDs: see reference
