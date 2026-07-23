@@ -1,0 +1,4 @@
+interface:
+  display_name: "Neura Ticket"
+  short_description: "Create Jira Service Management tickets for Neura Robotics (Robot Arms, MAV/MAV+, MiPA, Academy & Training)"
+  default_prompt: "I want to create a Neura Robotics support ticket."
