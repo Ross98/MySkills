@@ -1,0 +1,37 @@
+# MySkills
+
+Personal Codex skills collection.
+
+## Skills
+
+### neura-ticket
+
+Create Jira Service Management tickets for the Neura Robotics Customer Service & Support Portal.
+
+**Supported product groups:**
+
+| Group | Request Types |
+|-------|--------------|
+| Robot Arms | Service Request, General Inquiry, Submit Feature |
+| Mobile Manipulation MAV/MAV+ | Service Request, General Inquiry, Submit Feature |
+| MiPA | Technical Feedback, Service Request |
+| Academy & Training | Book Customer Training, Sales Training |
+
+**How to use:** In any Codex conversation, say "write a ticket" or "create a ticket" with your request details. Codex will generate the ticket content including all required fields and the portal link for manual submission.
+
+---
+
+## Installation
+
+Skills are auto-discovered from `~/.codex/skills/`. To install:
+
+```bash
+cp -r neura-ticket ~/.codex/skills/
+```
+
+Or clone the repo and symlink:
+
+```bash
+git clone https://github.com/Ross98/MySkills.git
+ln -s "$(pwd)/MySkills/neura-ticket" ~/.codex/skills/neura-ticket
+```
