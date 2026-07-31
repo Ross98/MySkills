@@ -1,0 +1,4 @@
+interface:
+  display_name: "Handoff"
+  short_description: "Save a concise task handoff for later continuation"
+  default_prompt: "Use $handoff to save the current task state into handoff.md."
