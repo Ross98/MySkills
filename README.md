@@ -4,6 +4,14 @@ Personal Codex skills collection.
 
 ## Skills
 
+### handoff
+
+Save the current task state to `handoff.md` so a later Codex session can continue without rereading the conversation.
+
+**How to use:** In any Codex conversation, say `handoff`. The skill overwrites the workspace-root `handoff.md` with the current goal, completed work, decisions, changed files, verification results, and next steps.
+
+---
+
 ### neura-ticket
 
 Create Jira Service Management tickets for the Neura Robotics Customer Service & Support Portal.
@@ -26,7 +34,7 @@ Create Jira Service Management tickets for the Neura Robotics Customer Service &
 Skills are auto-discovered from `~/.codex/skills/`. To install:
 
 ```bash
-cp -r neura-ticket ~/.codex/skills/
+cp -r handoff neura-ticket ~/.codex/skills/
 ```
 
 Or clone the repo and symlink:
