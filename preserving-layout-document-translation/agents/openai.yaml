@@ -1,0 +1,6 @@
+interface:
+  display_name: "保版式文档翻译"
+  short_description: "原位翻译图片密集型 PDF 与技术文档，并执行逐页视觉验收"
+  default_prompt: "Use $preserving-layout-document-translation to translate this document while preserving its original layout and verify every changed page."
+policy:
+  allow_implicit_invocation: true
