@@ -1,6 +1,6 @@
 ---
 name: preserving-layout-document-translation
-description: Use when translating or revising layout-sensitive PDF, DOCX, brochure, technical specification, engineering drawing, scanned document, or image-heavy document where visible image text, page geometry, and visual fidelity matter.
+description: Use when translating or revising layout-sensitive PDF, DOCX, SVG, draw.io diagram, brochure, technical specification, engineering drawing, scanned document, or image-heavy document where visible text, grouped geometry, page structure, and visual fidelity matter.
 ---
 
 # Preserving-Layout Document Translation
@@ -26,6 +26,7 @@ When the user says images, positions, page order, dimensions, or layout must not
 
 - Preserve the original and write translated output separately.
 - Inventory both editable text and visible text baked into images. Text extraction alone cannot prove coverage.
+- For structured vector diagrams, inventory every visible text channel and preserve nested groups as complete transform units; text existence alone does not prove that a translated object remains on-page.
 - Protect names, brands, model numbers, URLs, IPs, filenames, paths, versions, numbers, units, dimensions, drawing codes, and other tokens according to user instructions.
 - Never approximate a complex text region with a large axis-aligned rectangle. Use real glyph bounds, rotation, clipping paths, and the original region boundary.
 - Never guess colors. Read PDF fill colors or sample clean source pixels; keep page-specific colors local.

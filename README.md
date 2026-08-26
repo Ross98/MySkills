@@ -31,7 +31,7 @@ Create Jira Service Management tickets for the Neura Robotics Customer Service &
 
 ### preserving-layout-document-translation
 
-Translate layout-sensitive PDFs, DOCX files, brochures, technical specifications, engineering drawings, scans, and image-heavy documents while preserving page geometry and visual fidelity.
+Translate layout-sensitive PDFs, DOCX files, SVG/draw.io diagrams, brochures, technical specifications, engineering drawings, scans, and image-heavy documents while preserving page geometry, grouped structure, and visual fidelity.
 
 **How to use:** Ask Codex to translate a document while preserving its original layout. The skill inventories visible image text, protects technical tokens, tracks page assets, requires page-by-page visual QA, and appends a post-task review record.
 

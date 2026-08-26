@@ -10,6 +10,15 @@
 
 For DOCX, use the document-rendering workflow and inspect every rendered page. For PDF, use PDF inspection/rendering tools. Prefer workspace-bundled dependencies when system tools are absent.
 
+### SVG and draw.io preflight
+
+For structured SVG or draw.io exports, create two inventories before editing:
+
+1. **Visible text channels:** XHTML `foreignObject`, native SVG `<text>`, text baked into raster fallback images, and any other rendered text mechanism. A complete list from only one channel is not complete coverage.
+2. **Transform units:** identify top-level ordinary elements and top-level logical groups. If a top-level group has no direct geometry, calculate its bounds from all rendered descendant shapes in global page coordinates. Record critical grouped assemblies separately.
+
+When draw.io metadata is embedded, decide whether the deliverable must reopen as an updated draw.io diagram or only remain a visually editable SVG. If draw.io editability is required, update and verify the embedded model as well as the rendered SVG; preserving stale metadata is not sufficient.
+
 ## 2. Choose the least damaging method
 
 - Editable text: replace the text object where feasible.
@@ -38,7 +47,20 @@ Keep two independent fields:
 
 Also record translation/QA state such as `pending | translated | layout-checked | qa-failed | qa-passed`, issue notes, stable asset path, and last verified output version. A network failure or long-running job does not equal completion. Save successful pages immediately; avoid duplicate resubmissions that can create conflicting assets.
 
-## 5. Iterative QA
+## 5. Structured-diagram relayout
+
+When changing a diagram from side-by-side to stacked or otherwise moving complete regions:
+
+1. Confirm the region order and which legend or annotation block belongs to each region.
+2. Classify top-level transform units using global rendered bounds, not local child coordinates.
+3. Move an ordinary element once. For a nested assembly, move only its outermost group once; do not separately transform its descendants.
+4. Recalculate page bounds after transforms. Check that every critical group intersects the final page and that regions do not overlap.
+5. Verify region order and critical nested-group transforms with automated assertions where practical.
+6. Compare source and output module inventories. Matching text counts do not prove that shapes, internal connectors, or complete assemblies survived.
+
+Place each legend immediately after its associated region unless the user explicitly requests a combined legend area.
+
+## 6. Iterative QA
 
 After every page change:
 
@@ -58,5 +80,13 @@ After final assembly:
 7. confirm existing links, bookmarks, annotations, and attachments remain intact unless the user excluded them;
 8. confirm the requested filename and ensure the build script uses the same output path;
 9. report skipped, original, failed, or blocked pages plainly.
+
+For SVG/draw.io output, additionally verify:
+
+- every inventoried visible text channel;
+- every critical grouped assembly, including its internal shapes and connectors;
+- no translated object lies outside the final viewBox/page;
+- legend-to-region order matches the confirmed design;
+- the claimed editability level matches what was actually updated and reopened.
 
 Technical checks do not replace visual checks, and visual checks do not replace technical checks.
