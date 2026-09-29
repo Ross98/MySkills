@@ -1,6 +1,6 @@
 # Post-task record
 
-Append a new dated section to `/Users/adam/Documents/Codex/2026-08-03/fan/outputs/今日PDF翻译与排版复盘.md` after every translation task. Do not rewrite or delete previous entries.
+Append a new dated section after every translation task to the review file selected in [SKILL.md](../SKILL.md). Create its parent directory if needed. Do not rewrite or delete previous entries.
 
 Use only relevant fields; never invent verification:
 
