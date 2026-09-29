@@ -43,8 +43,6 @@ Do not report completion until all intended pages are accounted for, the final f
 
 ## Required learning loop
 
-After every translation task—even partial or blocked work—append the task’s observed problems, root causes, fixes, reusable rules, page/asset state, and actual verification result to:
+After every translation task—even partial or blocked work—append the task’s observed problems, root causes, fixes, reusable rules, page/asset state, and actual verification result to `outputs/translation-postmortem.md` under the task workspace root (the project or directory containing the source and output files). If the user specifies a review file, use that location instead. Never use the skill installation directory as the default destination.
 
-`/Users/adam/Documents/Codex/2026-08-03/fan/outputs/今日PDF翻译与排版复盘.md`
-
-Append only; preserve earlier records. Record facts from this run, not generic advice or claimed checks that were not performed.
+Append only; preserve earlier records. Follow [references/postmortem.md](references/postmortem.md). Record facts from this run, not generic advice or claimed checks that were not performed.
